@@ -122,6 +122,11 @@ add_executable(rknn_main_task_demo
   test/main_task_self.cc
 )
 
+add_executable(rknn_foot_pose_demo
+  test/main_rknn.cpp
+  src/foot_rknn.cpp
+)
+
 target_link_libraries(rknn_main_task_demo
   ecoaisweeper
   dl
@@ -139,10 +144,16 @@ target_link_libraries(rknn_infer_demo
   ecoaisweeper
 )
 
+target_link_libraries(rknn_foot_pose_demo
+  ${RKNN_RT_LIB}
+  ${OpenCV_LIBS}
+)
+
 install(TARGETS rknn_main_task_demo           DESTINATION ./)
 install(TARGETS rknn_detect_demo              DESTINATION ./)
 install(TARGETS rknn_seg_demo                 DESTINATION ./)
 install(TARGETS rknn_infer_demo               DESTINATION ./)
+install(TARGETS rknn_foot_pose_demo            DESTINATION ./)
 
 # install(DIRECTORY  ${CMAKE_IMAGE_PATH}        DESTINATION ./)
 # install(DIRECTORY  ${CMAKE_IMAGE_PATH}        DESTINATION ./)
