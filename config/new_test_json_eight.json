@@ -1,0 +1,289 @@
+{
+    "version": "0.0.1",
+    "private":
+    {
+        "inner_params":"/data/inner.json"
+    },
+    "type": 0,
+    "models":
+	[
+	    {
+            "name": "/data/zhoufeng/rknn_yolov5_demo_Linux/model/EcoAiSweeper/net-en.rknn",
+            "id": 0,
+            "ver": "0.0.1",
+            "model_type": 4,
+            "resize_type": 3, 
+            "background": -1,
+            "cls_topk": 5,
+            "detect_threshold": 0.5,
+            "iou_threshold": [[0.5],[0.5],[0.5],[0.7]],  
+            "threshold": [[0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],[0.5],[0.5, 0.5, 0.5],[0.5]],
+            "img_src": 2,
+            "core": 0,
+            "times": 6,
+            "imgs_per_run": 1,
+            "imgs_per_eat": 1,
+            "otaModule": "xxxx",
+            "checksum": "4c6df78d4b44e1326883a022a8cab605",
+            "size": 21552779,
+            "private":{}
+        },
+	    {                        
+            "name":"/data/zhoufeng/rknn_yolov5_demo_Linux/model/EcoAiSweeper/net-en3.rknn",
+            "id": 3,                                       
+            "ver": "0.0.1",  
+            "model_type":12, 
+            "resize_type": 3,        
+            "background": 0,         
+            "cls_threshold":0.3,
+	        "iou_threshold":0.45,                                                          
+            "threshold":[[0.3, 0.3, 0.3, 0.3, 0.3, 0.3]],        
+            "img_src": 2,  
+            "core":0,       
+            "times":5,        
+            "imgs_per_run": 1,
+            "imgs_per_eat": 1,                                                             
+            "otaModule": "xxxx",                                    
+            "checksum": "49e30472aec39ba86c073b5762a5e51a",
+            "size":8856755, 
+            "private":{}     
+        },
+        {                        
+            "name":"/data/zhoufeng/rknn_yolov5_demo_Linux/model/EcoAiSweeper/net-en10.rknn",
+            "id": 10,                                       
+            "ver": "0.0.1",  
+            "model_type":10, 
+            "resize_type": 3,        
+            "background": 0,         
+            "cls_threshold":0.3,
+	        "iou_threshold":0.45,                                                          
+            "threshold":[[0.3, 0.3, 0.3, 0.3, 0.3, 0.3]],        
+            "img_src": 2,  
+            "core":0,       
+            "times":5,        
+            "imgs_per_run": 1,
+            "imgs_per_eat": 1,                                                             
+            "otaModule": "xxxx",                                    
+            "checksum": "49e30472aec39ba86c073b5762a5e51a",
+            "size":8856755, 
+            "private":{}     
+        },
+	    {                                                
+            "name":"/data/zhoufeng/rknn_yolov5_demo_Linux/model/EcoAiSweeper/net-en2.rknn",
+            "id": 2,                                                                                                          
+            "ver": "0.0.1",  
+            "model_type":2,                                                                                                  
+            "resize_type": 3,                                                                                                 
+            "background": 0,
+            "cls_topk": 5,         
+            "detect_threshold": 0.24,                                                           
+            "iou_threshold":[[0.7]],                          
+            "threshold":[[0.38]],
+            "img_src": 2,            
+            "core":0,                                                                   
+            "times":5,               
+            "imgs_per_run": 1,                                                             
+            "imgs_per_eat": 1,                                                          
+            "otaModule": "xxxx",                         
+            "checksum": "b20bf09c49ff99140f20754687f332e9",
+            "size":5512600,     
+            "private":{}                                   
+        },
+        {                                                
+            "name":"/data/zhoufeng/rknn_yolov5_demo_Linux/model/EcoAiSweeper/net-en7.rknn",
+            "id": 7,                                                                                                          
+            "ver": "0.0.1",  
+            "model_type":1,                                                                                                  
+            "resize_type": 3,                                                                                                 
+            "background": 0,
+            "cls_topk": 5,         
+            "detect_threshold": 0.24,                                                           
+            "iou_threshold":[[0.45]],                          
+            "threshold":[[0.25]],
+            "img_src": 2,            
+            "core":0,                                                                   
+            "times":6,               
+            "imgs_per_run": 1,                                                             
+            "imgs_per_eat": 1,                                                          
+            "otaModule": "xxxx",                         
+            "checksum": "80f31308a12ea08f703b8c72e0db0338",
+            "size":7379450,     
+            "private":{}                                   
+        },
+	    {
+            "name": "/data/zhoufeng/rknn_yolov5_demo_Linux/model/EcoAiSweeper/net-en1.rknn",
+            "id": 1,
+            "ver": "0.0.1",
+            "model_type": 3,
+            "resize_type": 3,
+            "background": -1,
+            "cls_topk": 5,
+            "detect_threshold": 0.24,
+            "iou_threshold": [[0.5]],
+            "threshold": [[0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24]],
+            "img_src": 2,
+            "core": 0,
+            "times": 5,
+            "imgs_per_run": 1,
+            "imgs_per_eat": 1,
+            "otaModule": "xxxx",
+            "checksum": "49e30472aec39ba86c073b5762a5e51a",
+            "size": 8856755,
+            "private":{}
+        },                                                                                               
+        {                                                                                                                     
+            "name":"/data/zhoufeng/rknn_yolov5_demo_Linux/model/EcoAiSweeper/net-en4.rknn",                                                       
+            "id": 4,                                                                                          
+            "ver": "0.0.1",                                                                                                   
+            "model_type":7,                                                                                                   
+            "resize_type": 3,                                          
+            "background": 0,                                                                                                  
+            "cls_topk": 1,                                                                                                    
+            "detect_threshold": 0.24,                                                                         
+            "threshold":[[0]],                                                                                              
+            "img_src": 2,                                                               
+            "core":0,                                                  
+            "times":6,                                                                                                        
+            "imgs_per_run": 1,                                                                                                
+            "imgs_per_eat": 1,                                                                                
+            "otaModule": "xxxx",                                                             
+            "checksum": "1bb0f5d1c68229d8250b8f5304ff4b77",                                                                   
+            "size":2528404,                                            
+            "private":{}                                                                                                      
+        },
+        {                                                                                                                     
+            "name":"/data/zhoufeng/rknn_yolov5_demo_Linux/model/EcoAiSweeper/net-en5.rknn",                                 
+            "id": 5,                                                                         
+            "ver": "0.0.1",                                                                                                   
+            "model_type":6,                                            
+            "resize_type": 3,                                                                                                 
+            "background": 0,                                                                                                  
+            "cls_topk": 1,                                                                                    
+            "detect_threshold": 0.24,                                                        
+            "threshold":[[0]],                                                             
+            "img_src": 2,                                              
+            "core":0,                                                                                                         
+            "times":6,                                                                                                        
+            "imgs_per_run": 1,                                                                                
+            "imgs_per_eat": 1,                                                               
+            "otaModule": "xxxx",                                                             
+            "checksum": "1bb0f5d1c68229d8250b8f5304ff4b77",            
+            "size":2528404,                                                                  
+            "private":{}                                   
+        },
+        {                                                
+            "name":"/data/zhoufeng/rknn_yolov5_demo_Linux/model/EcoAiSweeper/net-en21.rknn",
+            "id": 21,                                                                                                          
+            "ver": "0.0.1",  
+            "model_type":8,                                                                                                  
+            "resize_type": 0,                                                                                                 
+            "background": 0,
+            "cls_topk": 5,         
+            "detect_threshold": 0.24,                                                           
+            "iou_threshold":[[0.45]],                          
+            "threshold":[[0.25]],
+            "img_src": 1024,            
+            "core":0,                                                                   
+            "img_save": "",
+            "times":6,               
+            "imgs_per_run": 1,                                                             
+            "imgs_per_eat": 1,                                                          
+            "otaModule": "xxxx",                         
+            "checksum": "e1480df5b0bcb2c1e2789ceb4b76b908",
+            "size":2907771,     
+            "private":{}                                   
+        }  
+    ],
+    "distance":{
+        "depth_image":"/data/distance.dat",
+        "distance_table":"./tmp/distance_table",
+        "structure_h":5.9,
+        "DIS_TO_CAMERA2CENTER":1.1,
+        "segment":[3],
+        "model_param" : [
+            {
+                "model_id":0,
+                "obj":
+                [
+                    {
+                        "class":0,
+                        "location":
+                        [
+                            10.0, 45.0, 8.0, 50.0
+                        ]
+                    },
+                    {
+                        "class":1,
+                        "location":
+                        [
+                            -100000, 100000, -100000, 100000
+                        ]
+                    }
+                ]
+            },
+            {
+                "model_id":1,
+                "obj":
+                    [
+                    {
+                        "class":0,
+                        "location":
+                        [
+                            -100000, 100000, -100000, 100000
+                        ]
+                    },
+                    {
+                        "class":1,
+                        "location":
+                        [
+                            -100000, 100000, -100000, 100000
+                        ]
+                    }
+                    ]
+            },
+            {
+                "model_id":2,
+                "obj":
+                    [
+                    {
+                        "class":0,
+                        "location":
+                        [
+                            0, 10000, 0, 10000
+                        ]
+                    },
+                    
+                    {
+                        "class":1,
+                        "location":
+                        [
+                            0, 10000, 0, 10000
+                        ]
+                    }
+                    ]
+            },
+            {
+                "model_id":4,
+                "obj":
+                [
+                {
+                    "class":0,
+                    "location":
+                    [
+                        0, 10000, 0, 10000
+                    ]
+                },
+                {
+                    "class":1,
+                    "location":
+                    [
+                        0, 10000, 0, 10000
+                    ]
+                }
+                ]
+            }    
+        ]
+    }
+}
+
+

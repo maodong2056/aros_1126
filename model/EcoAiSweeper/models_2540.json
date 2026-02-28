@@ -1,0 +1,418 @@
+{
+    "version": "1.17.12",
+    "private":
+    {
+        "inner_params":"/data/inner.json",
+        "IR_inner_params":"/data/camera_params.json"
+    },
+    "models":
+    [
+	    {                                                
+            "name":"net-en2.rknn",
+            "id": 2,                                                                                                          
+            "ver": "0.0.1",  
+            "model_type":2,                                                                                                  
+            "resize_type": 3,                                                                                                 
+            "background": 0,
+            "cls_topk": 5,         
+            "detect_threshold": 0.38,                                                           
+            "iou_threshold":[[0.7]],                          
+            "threshold":[[0.38]],
+            "img_src": 1,            
+            "core":0,                                                                   
+            "img_save": "",
+            "times":0,               
+            "imgs_per_run": 1,                                                             
+            "imgs_per_eat": 1,                                                          
+            "otaModule": "xxxx",                         
+            "checksum": "d6b2e72f9740f8e6e1caad776aa79610",
+            "size":5724627,     
+            "private":{}                                   
+        },
+	    {                        
+            "name":"net-en3.rknn",
+            "id": 3,                                       
+            "ver": "0.0.3",  
+            "model_type":12, 
+            "resize_type": 3,        
+            "background": 0,         
+            "cls_threshold":0.3,
+            "iou_threshold":0.45,                                                          
+            "threshold":[[0.3, 0.3, 0.3, 0.3, 0.3, 0.3]],        
+            "img_src": 2,  
+            "core":0,       
+            "img_save": "",
+            "times":0,        
+            "imgs_per_run": 1,
+            "imgs_per_eat": 1,                                                             
+            "otaModule": "xxxx",                                    
+            "checksum": "b394770969d31e35767e0c329fecb09d",
+            "size":8873938, 
+            "private":{}     
+        },
+        {                        
+            "name":"net-en10.rknn",
+            "id": 10,                                       
+            "ver": "0.0.3",  
+            "model_type":10, 
+            "resize_type": 3,        
+            "background": 0,         
+            "cls_threshold":0.3,
+	        "iou_threshold":0.45,                                                          
+            "threshold":[[0.3, 0.3, 0.3, 0.3, 0.3, 0.3]],        
+            "img_src": 2,  
+            "core":0,       
+            "times":0,        
+            "imgs_per_run": 1,
+            "imgs_per_eat": 1, 
+            "img_save": "",                                                            
+            "otaModule": "xxxx",                                    
+            "checksum": "4f4b98714df15f9fc3563b782601ba7f",
+            "size":8379077, 
+            "private":{}     
+        },
+	    {
+            "name": "net-en1.rknn",
+            "id": 1,
+            "ver": "0.0.1",
+            "model_type": 10,
+            "resize_type": 3,
+            "background": -1,
+            "cls_topk": 5,
+            "detect_threshold": 0.24,
+            "iou_threshold": [[0.5]],
+            "threshold": [[0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24]],
+            "img_src": 2,
+            "core": 0,
+            "img_save": "",
+            "times": 0,
+            "imgs_per_run": 1,
+            "imgs_per_eat": 1,
+            "otaModule": "xxxx",
+            "checksum": "459d1952cbc85f958621f5dd2971661a",
+            "size": 12001743,
+            "private":{}
+        },
+        {                                                                                                                     
+            "name":"net-en4.rknn",                                                       
+            "id": 4,                                                                                          
+            "ver": "0.0.1",                                                                                                   
+            "model_type":7,                                                                                                   
+            "resize_type": 3,                                          
+            "background": 0,                                                                                                  
+            "cls_topk": 1,                                                                                                    
+            "detect_threshold": 0.24,                                                                         
+            "threshold":[[0]],                                                                                              
+            "img_src": 1026,                                                               
+            "core":0,                                                  
+            "img_save": "",
+            "times":0,                                                                                                        
+            "imgs_per_run": 1,                                                                                                
+            "imgs_per_eat": 2,                                                                                
+            "otaModule": "xxxx",                                                             
+            "checksum": "79941c7eb35d3d6a45a0c184021d0f06",                                                                   
+            "size":3483366,                                            
+            "private":{}                                                                                                      
+        },
+        {                                                                                                                     
+            "name":"net-en5.rknn",                                 
+            "id": 5,                                                                         
+            "ver": "0.0.1",                                                                                                   
+            "model_type":6,                                            
+            "resize_type": 3,                                                                                                 
+            "background": 0,                                                                                                  
+            "cls_topk": 1,                                                                                    
+            "detect_threshold": 0.24,                                                        
+            "threshold":[[0]],                                                             
+            "img_src": 2,                                              
+            "core":0,                                                                                                         
+            "img_save": "",
+            "times":0,                                                                                                        
+            "imgs_per_run": 1,                                                                                
+            "imgs_per_eat": 1,                                                               
+            "otaModule": "xxxx",                                                             
+            "checksum": "2b449815ea8f882efd3c61364efd50c3",            
+            "size":3868041,                                                                  
+            "private":{}                                   
+        },
+        {                                                
+            "name":"net-en11.rknn",
+            "id": 11,                                                                                                          
+            "ver": "0.0.3",  
+            "model_type":9,                                                                                                  
+            "resize_type": 3,                                                                                                 
+            "background": 0,
+            "cls_topk": 5,         
+            "detect_threshold": 0.24,                                                           
+            "iou_threshold":[[0.45]],                          
+            "threshold":[[0.5]],
+            "img_src": 2,            
+            "core":0,                                                                   
+            "img_save": "",
+            "times":0,               
+            "imgs_per_run": 1,                                                             
+            "imgs_per_eat": 1,                                                          
+            "otaModule": "xxxx",                         
+            "checksum": "160dbf7eda8543ee3defadbdbc3c24b5",
+            "size":10209993,     
+            "private":{}                                   
+        },
+        {                                                
+            "name":"net-en12.rknn",
+            "id": 12,                                                                                                          
+            "ver": "0.0.3",  
+            "model_type":12,                                                                                                  
+            "resize_type": 3,                                                                                                 
+            "background": 0,
+            "cls_topk": 5,         
+            "detect_threshold": 0.24,                                                           
+            "iou_threshold":[[0.25]],                          
+            "threshold":[[0.7,0.7,0.7,0.8]],
+            "img_src": 2,            
+            "core":0,                                                                   
+            "img_save": "",
+            "times":0,               
+            "imgs_per_run": 1,                                                             
+            "imgs_per_eat": 1,                                                          
+            "otaModule": "xxxx",                         
+            "checksum": "27cdbc7633ada19fe12ea4a3c73a01d8",
+            "size":11640713,     
+            "private":{}                                   
+        }, 
+        {                                                
+            "name":"net-en13.rknn",
+            "id": 13,                                                                                                          
+            "ver": "0.0.2",  
+            "model_type":13,                                                                                                  
+            "resize_type": 3,                                                                                                 
+            "background": 0,
+            "cls_topk": 5,         
+            "detect_threshold": 0.24,                                                           
+            "iou_threshold":[[0.1]],                          
+            "threshold":[[0.7]],
+            "img_src": 2,            
+            "core":0,                                                                   
+            "img_save": "",
+            "times":0,               
+            "imgs_per_run": 1,                                                             
+            "imgs_per_eat": 1,                                                          
+            "otaModule": "xxxx",                         
+            "checksum": "9bb29b6944826af1fd3f7ef21268674a",
+            "size":7443585,     
+            "private":{}                                    
+        },
+        {                                                
+            "name":"net-en14.rknn",
+            "id": 14,                                                                                                          
+            "ver": "0.0.2",  
+            "model_type":14,                                                                                                  
+            "resize_type": 3,                                                                                                 
+            "background": 0,
+            "cls_topk": 5,         
+            "detect_threshold": 0.24,                                                           
+            "iou_threshold":[[0.2]],                          
+            "threshold":[[0.7, 0.7, 0.7, 0.5, 0.7]],
+            "img_src": 2,            
+            "core":0,                                                                   
+            "img_save": "",
+            "times":0,               
+            "imgs_per_run": 1,                                                             
+            "imgs_per_eat": 1,                                                          
+            "otaModule": "xxxx",                         
+            "checksum": "e168c403168b1f9fce7b19d49ed91772",
+            "size":7514998,     
+            "private":{}                                    
+        },
+        {                                                                                                                     
+            "name":"net-en15.rknn",                                 
+            "id": 15,                                                                         
+            "ver": "0.0.1",                                                                                                   
+            "model_type":6,                                            
+            "resize_type": 3,                                                                                                 
+            "background": 0,                                                                                                  
+            "cls_topk": 1,                                                                                    
+            "detect_threshold": 0.24,                                                        
+            "threshold":[[0]],                                                             
+            "img_src": 2,                                              
+            "core":0,                                                                                                         
+            "img_save": "",
+            "times":0,                                                                                                        
+            "imgs_per_run": 1,                                                                                
+            "imgs_per_eat": 1,                                                               
+            "otaModule": "xxxx",                                                             
+            "checksum": "7a79663a5c7afd11b9266063f65a2f44",            
+            "size":3881799,                                                                  
+            "private":{}                                   
+        },
+        {                                                
+            "name":"net-en21.rknn",
+            "id": 21,                                                                                                          
+            "ver": "0.0.3",  
+            "model_type":15,                                                                                                  
+            "resize_type": 3,                                                                                                 
+            "background": 0,
+            "cls_topk": 5,         
+            "detect_threshold": 0.24,                                                           
+            "iou_threshold":[[0.45]],                          
+            "threshold":[[0.6, 0.8, 0.8]],
+            "img_src": 1024,            
+            "core":0,                                                                   
+            "img_save": "",
+            "times":0,               
+            "imgs_per_run": 1,                                                             
+            "imgs_per_eat": 1,                                                          
+            "otaModule": "xxxx",                         
+            "checksum": "48c990456241b9e348990c2d16f88adc",
+            "size":12432588,     
+            "private":{}                                   
+        } 
+    ],
+    "distance":{
+        "depth_image":"/data/distance.dat",
+        "distance_table":"./tmp/distance_table",
+        "structure_h":5.9,
+        "DIS_TO_CAMERA2CENTER":1.1,
+        "segment":[3],
+        "model_param" : [
+            {
+            "model_id":0,
+            "obj":
+            [{
+                "class":0,
+                "location":
+                [
+                    10.0, 45.0, 8.0, 50.0
+                ]
+            },
+    
+            {
+                "class":1,
+                "location":
+                [
+                    6.0, 25.0, 6.0, 12.0
+                ]
+            },
+    
+            {
+                "class":2,
+                "location":
+                [
+                    4.0, 60.0, 0.2, 30.0
+                ]
+            },
+    
+            {
+                "class":3,
+                "location":
+                [
+                    10.0, 1500.0, 0.3, 30.0
+                ]
+            },
+            {
+                "class":4,
+                "location":
+                [
+                    -100000, 100000, -100000, 100000
+                ]
+            }
+        ]
+        },
+    
+        {
+              "model_id":1,
+              "obj":
+                [{
+                    "class":0,
+                    "location":
+                    [
+                        -100000, 100000, -100000, 100000
+                    ]
+                },
+        
+                {
+                    "class":1,
+                    "location":
+                    [
+                        -100000, 100000, -100000, 100000
+                    ]
+                },
+        
+                {
+                    "class":2,
+                    "location":
+                    [
+                        -100000, 100000, -100000, 100000
+                    ]
+                },
+        
+                {
+                    "class":3,
+                    "location":
+                    [
+                        -100000, 100000, -100000, 100000
+                    ]
+                },
+        
+                {
+                    "class":4,
+                    "location":
+                    [
+                        -100000, 100000, -100000, 100000
+                    ]
+                },
+                {
+                    "class":5,
+                    "location":
+                    [
+                        -100000, 100000, -100000, 100000
+                    ]
+                }
+            ]
+                },
+                {
+                    "model_id":2,
+                    "obj":
+                    [{
+                        "class":0,
+                        "location":
+                        [
+                            0, 10000, 0, 10000
+                        ]
+                    },
+            
+                    {
+                        "class":1,
+                        "location":
+                        [
+                            0, 10000, 0, 10000
+                        ]
+                    }
+                ]
+                },
+                {
+                    "model_id":4,
+                    "obj":
+                    [{
+                        "class":0,
+                        "location":
+                        [
+                            0, 10000, 0, 10000
+                        ]
+                    },
+            
+                    {
+                        "class":1,
+                        "location":
+                        [
+                            0, 10000, 0, 10000
+                        ]
+                    }
+                ]
+                }
+        
+        
+        ]
+    }
+}
+
+

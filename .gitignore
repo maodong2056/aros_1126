@@ -1,0 +1,27 @@
+# build
+build/
+install/
+out/
+
+# cmake
+CMakeFiles/
+CMakeCache.txt
+
+# 编译产物
+*.o
+*.so
+*.a
+*.out
+*.log
+
+# RKNN
+*.rknn
+*.onnx
+
+# linux
+*.swp
+*.tmp
+.DS_Store
+
+# vscode
+.vscode/

@@ -1,0 +1,63 @@
+{
+    "version": "0.0.1",
+    "private":
+    {
+        "inner_params":"/data/inner.json"
+    },
+    "models":
+	[
+	    {                                                
+            "name":"/model/EcoAiSweeper/net-en2.rknn",
+            "id": 2,                                                                                                          
+            "ver": "0.0.1",  
+            "model_type":2,                                                                                                  
+            "resize_type": 3,                                                                                                 
+            "background": 0,
+            "cls_topk": 5,         
+            "detect_threshold": 0.24,                                                           
+            "iou_threshold":[[0.7]],                          
+            "threshold":[[0.38]],
+            "img_src": 2,            
+            "core":0,                                                                   
+            "times":5,               
+            "imgs_per_run": 1,                                                             
+            "imgs_per_eat": 1,                                                          
+            "otaModule": "xxxx",                         
+            "checksum": "b20bf09c49ff99140f20754687f332e9",
+            "size":5512600,     
+            "private":{}                                   
+        }
+    ],
+    "distance":{
+        "depth_image":"/data/distance.dat",
+        "distance_table":"./tmp/distance_table",
+        "structure_h":7.47,
+        "DIS_TO_CAMERA2CENTER":2.7,
+        "segment":[3],
+        "model_param" : [
+          
+                {
+                    "model_id":2,
+                    "obj":
+                    [{
+                        "class":0,
+                        "location":
+                        [
+                            0, 10000, 0, 10000
+                        ]
+                    },
+            
+                    {
+                        "class":1,
+                        "location":
+                        [
+                            0, 10000, 0, 10000
+                        ]
+                    }
+                ]
+                }
+        ]
+    }
+}
+
+

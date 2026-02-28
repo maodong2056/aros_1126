@@ -1,0 +1,1263 @@
+{
+	"main_version": "0.0.1",
+
+    "cameras":
+    [
+        {
+            "name":"RGBD1",
+            "params_path":"./config/cam.json"
+        },
+        {
+            "name":"RGBD2",
+            "params_path":"./config/cam.json"
+        },
+        {
+            "name":"RGBD3",
+            "params_path":"./config/cam.json"
+        }
+
+    ],
+   
+    "models":
+	[
+        {
+            "name": "./bin/model/EcoAiSweeper/model_0_230228.rknn",
+            "id": 0,
+            "ver": "0.0.1",
+            "model_type": 2,
+			"after_model": [2, 3, 4, 5],
+            "resize_type": 1, 
+            "background": -1,
+            "cls_topk": 5,
+            "detect_threshold": 0.24,
+            "iou_threshold": 0.5,  
+            "threshold": [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
+            "img_src": 16,
+            "core": 0,
+            "times": 5,
+            "imgs_per_run": 1,
+            "imgs_per_eat": 3,
+            "otaModule": "xxxx",
+            "checksum": "49e30472aec39ba86c073b5762a5e51a",
+            "size": 8856755,
+            "private":{}
+        },
+        {
+            "name": "./bin/model/EcoAiSweeper/model_20_230228.rknn",
+            "id": 20,
+            "ver": "0.0.1",
+            "model_type": 2,
+			"after_model": [],
+            "resize_type": 1,
+            "background": -1,
+            "cls_topk": 5,
+            "detect_threshold": 0.24,
+            "iou_threshold": 0.5,  
+            "threshold": [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.24, 0.24, 0.24],
+            "img_src": 32,
+            "core": 0,
+            "times": 5,
+            "imgs_per_run": 1,
+            "imgs_per_eat": 3,
+            "otaModule": "xxxx",
+            "checksum": "49e30472aec39ba86c073b5762a5e51a",
+            "size": 8856755,
+            "private":{}
+        },
+        {
+            "name":"./bin/model/EcoAiSweeper/model_21_230330.rknn",
+            "id":21,
+            "ver": "0.0.1",
+            "model_type":11,
+			"after_model": [],
+            "resize_type": 1,
+            "background": 0,
+            "cls_threshold":0.35,
+            "threshold":[0.8, 0.7, 0.7, 0.5, 0.5, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+            "img_src": 32,
+            "core":1,
+            "times":5,
+            "imgs_per_run": 1,
+            "imgs_per_eat": 3,
+            "otaModule": "xxxx",
+            "checksum": "49e30472aec39ba86c073b5762a5e51a",
+            "size":8856755,
+            "private":{}
+        },
+        {
+            "name": "./bin/model/EcoAiSweeper/model_22_230228.rknn",
+            "id":22,
+            "ver": "0.0.1",
+            "model_type":10,
+			"after_model": [],
+            "resize_type": 0,
+            "background": -1,
+            "cls_threshold":0.1,
+            "threshold":[0.1, 0.1, 0.1],
+            "img_src": 32,
+            "core":1,
+            "times":5,
+            "imgs_per_run": 1,
+            "imgs_per_eat": 3,
+            "otaModule": "xxxx",
+            "checksum": "49e30472aec39ba86c073b5762a5e51a",
+            "size":8856755,
+            "private":{}
+        },
+        {
+            "name": "./bin/model/EcoAiSweeper/model_23_230228.rknn",
+            "id":23,
+            "ver": "0.0.1",
+            "model_type":2,
+			"after_model": [],
+            "resize_type": 1,
+            "background": -1,
+            "cls_topk": 5,
+            "cls_threshold":0.5,
+            "threshold":[0.4, 0.4, 0.35, 0.5, 0.3, 0.24, 0.24],
+            "img_src": 32,
+            "core":0,
+            "times":5,
+            "imgs_per_run": 1,
+            "imgs_per_eat": 3,
+            "otaModule": "xxxx",
+            "checksum": "49e30472aec39ba86c073b5762a5e51a",
+            "size":8856755,
+            "private":{}
+        }
+    ],
+
+    "private":
+    {
+        "plane_depth_image_path": "./img/depth.png",
+        "plane_ir_image_path":    "./img/ir.png",
+        "up_cam_max_length":      4000,
+        "down_cam_max_length":    1500
+    },
+    
+    "collect_cfg": {
+		"type": "AiImage",
+		"config": [
+			{
+				"name": "model_0",
+				"model_description": "nemo_zero",
+				"version": "0.0.1",
+				"content":
+				[
+					{
+						"_name": "nemo_zero",
+						"_conditions":
+						[
+							{
+								"_name": "Spatial",
+								"_items":
+								{
+									"type": 0,
+									"distance": [[1000, 3000]]
+								}
+							},
+							{
+								"_name": "Env",
+								"_items":
+								{
+									"brightness":[[0, 220]]
+								}
+							},
+							{
+								"_name": "Property",
+								"_items":
+								{
+									"score": 0.5,
+									"class_id": [1, 2, 6, 100, 9, 15]
+								},
+								"_special":
+								[
+									{
+										"_name": "obj_ONEMEHURDLE",
+										"_items":
+										{
+											"class_id": [1]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_ONEMEHURDLE_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_WARNINGSIGN",
+										"_items":
+										{
+											"class_id": [2]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_WARNINGSIGN_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_BILLBOARD",
+										"_items":
+										{
+											"class_id": [6]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_BILLBOARD_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_PERSON",
+										"_items":
+										{
+											"class_id": [100]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 30,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_PERSON_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 30,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_ESCALATOR",
+										"_items":
+										{
+											"class_id": [9]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_ESCALATOR_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_ELEVATOR",
+										"_items":
+										{
+											"class_id": [15]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_ELEVATOR_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "model_20",
+				"model_description": "nemo_twenty",
+				"version": "0.0.1",
+				"content":
+				[
+					{
+						"_name": "nemo_twenty",
+						"_conditions":
+						[
+							{
+								"_name": "Spatial",
+								"_items":
+								{
+									"type": 0,
+									"distance": [[100, 1200]]
+								}
+							},
+							{
+								"_name": "Env",
+								"_items":
+								{
+									"brightness":[[0, 220]]
+								}
+							},
+							{
+								"_name": "Property",
+								"_items":
+								{
+									"score": 0.5,
+									"class_id": [13, 102, 10, 7, 12, 8]
+								},
+								"_special":
+								[
+									{
+										"_name": "obj_BOTTLE_BASE",
+										"_items":
+										{
+											"class_id": [13]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_BOTTLE_BASE_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_SHOES",
+										"_items":
+										{
+											"class_id": [102]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_SHOES_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_GARBAGE",
+										"_items":
+										{
+											"class_id": [10]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_GARBAGE_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_FLOOR_LAMP",
+										"_items":
+										{
+											"class_id": [7]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_FLOOR_LAMP_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_LADDER_MAT",
+										"_items":
+										{
+											"class_id": [12]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_LADDER_MAT_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_CARPET",
+										"_items":
+										{
+											"class_id": [8]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_CARPET_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "model_21",
+				"model_description": "nemo_twenty_one",
+				"version": "0.0.1",
+				"content":
+				[
+					{
+						"_name": "nemo_twenty_one",
+						"_conditions":
+						[
+							{
+								"_name": "Spatial",
+								"_items":
+								{
+									"type": 0,
+									"distance": [[100, 1200]]
+								}
+							},
+							{
+								"_name": "Env",
+								"_items":
+								{
+									"brightness":[[0, 220]]
+								}
+							},
+							{
+								"_name": "Property",
+								"_items":
+								{
+									"score": 0.5,
+									"class_id": [8, 12, 5, 4]
+								},
+								"_special":
+								[
+									{
+										"_name": "obj_WARNING_TAPE",
+										"_items":
+										{
+											"class_id": [5]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_WARNING_TAPE_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_CRIMP_LINE",
+										"_items":
+										{
+											"class_id": [4]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_CRIMP_LINE_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_LADDER_MAT",
+										"_items":
+										{
+											"class_id": [12]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_LADDER_MAT_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									},
+									{
+										"_name": "obj_CARPET",
+										"_items":
+										{
+											"class_id": [8]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_CARPET_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "model_22",
+				"model_description": "nemo_twenty_one",
+				"version": "0.0.1",
+				"content":
+				[
+					{
+						"_name": "nemo_twenty_two",
+						"_conditions":
+						[
+							{
+								"_name": "Spatial",
+								"_items":
+								{
+									"type": 0,
+									"distance": [[100, 1200]]
+								}
+							},
+							{
+								"_name": "Env",
+								"_items":
+								{
+									"brightness":[[0, 220]]
+								}
+							},
+							{
+								"_name": "Property",
+								"_items":
+								{
+									"score": 0.5,
+									"class_id": [3]
+								},
+								"_special":
+								[
+									{
+										"_name": "obj_LINE",
+										"_items":
+										{
+											"class_id": [3]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_LINE_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "model_23",
+				"model_description": "nemo_twenty_three",
+				"version": "0.0.1",
+				"content":
+				[
+					{
+						"_name": "nemo_twenty_three",
+						"_conditions":
+						[
+							{
+								"_name": "Spatial",
+								"_items":
+								{
+									"type": 0,
+									"distance": [[100, 1200]]
+								}
+							},
+							{
+								"_name": "Env",
+								"_items":
+								{
+									"brightness":[[0, 220]]
+								}
+							},
+							{
+								"_name": "Property",
+								"_items":
+								{
+									"score": 0.5,
+									"class_id": [11]
+								},
+								"_special":
+								[
+									{
+										"_name": "obj_WATER_STAIN",
+										"_items":
+										{
+											"class_id": [11]
+										},
+										"_conditions":
+										[
+											{
+												"_name": "Time",
+												"_items":
+												{
+													"round_interval_time": 600,
+													"data_interval_time": 5.0,
+													"enabled_duration": [["00:00", "16:00"]]
+												},
+												"_special":
+												[
+													{
+														"_name": "obj_WATER_STAIN_night",
+														"_conflict": "or",
+														"_items":
+														{
+															"round_interval_time": 600,
+															"data_interval_time": 5.0,
+															"enabled_duration": [["16:00", "24:00"]]
+														},
+														"_conditions":
+														[
+															{
+																"_name": "Amount",
+																"_items":
+																{
+																	"max_per_round": 2,
+																	"max_amount": 50
+																}
+															}
+														]
+													}
+												]
+											},
+											{
+												"_name": "Amount",
+												"_items":
+												{
+													"max_per_round": 2,
+													"max_amount": 50
+												}
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+			]
+}
+
+}
+
