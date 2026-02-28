@@ -1,15 +1,32 @@
 #include "foot_rknn.h"
 
 #include <algorithm>
-#include <cstdlib>
 #include <cmath>
 #include <cstring>
-#include "utils.h"
-
+#include <fstream>
 #include <iostream>
 #include <stdexcept>
 
 namespace {
+std::vector<unsigned char> read_binary_file(const std::string &path) {
+  std::ifstream ifs(path, std::ios::binary | std::ios::ate);
+  if (!ifs.is_open()) {
+    throw std::runtime_error("Failed to open model file: " + path);
+  }
+
+  std::streamsize size = ifs.tellg();
+  if (size <= 0) {
+    throw std::runtime_error("Invalid model size: " + path);
+  }
+
+  ifs.seekg(0, std::ios::beg);
+  std::vector<unsigned char> buffer(static_cast<size_t>(size));
+  if (!ifs.read(reinterpret_cast<char *>(buffer.data()), size)) {
+    throw std::runtime_error("Failed to read model file: " + path);
+  }
+  return buffer;
+}
+
 int tensor_elements(const rknn_tensor_attr &attr) {
   int total = 1;
   for (uint32_t i = 0; i < attr.n_dims; ++i) {
@@ -20,15 +37,8 @@ int tensor_elements(const rknn_tensor_attr &attr) {
 } // namespace
 
 FootPoseDetector::FootPoseDetector(const std::string &modelPath) {
-  int model_size = 0;
-  unsigned char *model_data = sweeper_ai::load_model(modelPath.c_str(), &model_size);
-  if (model_data == nullptr || model_size <= 0) {
-    throw std::runtime_error("Failed to load model file: " + modelPath);
-  }
-
-  int ret = rknn_init(&ctx, model_data, model_size, 0, nullptr);
-  free(model_data);
-  model_data = nullptr;
+  auto model_data = read_binary_file(modelPath);
+  int ret = rknn_init(&ctx, model_data.data(), model_data.size(), 0, nullptr);
   if (ret != RKNN_SUCC) {
     throw std::runtime_error("rknn_init failed, ret=" + std::to_string(ret));
   }
@@ -66,9 +76,8 @@ FootPoseDetector::~FootPoseDetector() {
 
 void FootPoseDetector::preprocess(const cv::Mat &img, cv::Mat &rgb_img,
                                   float &scale_x, float &scale_y) {
-  cv::Mat resized(INPUT_H, INPUT_W, CV_8UC3, cv::Scalar(114, 114, 114));
-  cv::Mat bgr = img.clone();
-  sweeper_ai::eco_resize(bgr, resized, INPUT_W, INPUT_H, sweeper_ai::EM_NORMAL_RESIZE);
+  cv::Mat resized;
+  cv::resize(img, resized, cv::Size(INPUT_W, INPUT_H));
   cv::cvtColor(resized, rgb_img, cv::COLOR_BGR2RGB);
 
   scale_x = static_cast<float>(img.cols) / static_cast<float>(INPUT_W);
